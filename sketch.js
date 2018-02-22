@@ -1,4 +1,4 @@
-let r1 = 125;
+let r1 = 105;
 let r2 = 90;
 let m1 = 10;
 let m2 = 10;
