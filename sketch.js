@@ -95,20 +95,26 @@ function draw() {
         a2_v*a2_v*r2*m2*cos(a1-a2));
     var bottom2 = r2 * (2 * m1 + m2 - m2 * cos(2 * a1 - 2 * a2));
     var a2_a = top2/bottom2;
+    
+    // Maximum Acc.
+    if (abs(a1_a) > 0.4) {
+      a1_v = 0;
+      a1 = PI/2;
+      a1 = PI/2;
 
-    // Limit maximum speed
-
-    // if (abs(a1_v) > 100) {
-    //   a1_v = Math.sign(a1_v) * 100;
-    // }
-    // if (abs(a2_v) > 100) {
-    //   a2_v = Math.sign(a2_v) * 100;
-    // }
+    }
+    if (abs(a2_a) > 0.4) {
+      a2_v = 0;
+      a2 = PI/2;
+      a1_v = 0;
+      a1 = PI/2;
+      a1 = PI/2;
+    }
 
 
     // Velocity Dampening
-    a1_v *= 0.999;
-    a2_v *= 0.999;
+    a1_v *= 0.998;
+    a2_v *= 0.998;
 
     // Update velocities
     a1_v += a1_a;
